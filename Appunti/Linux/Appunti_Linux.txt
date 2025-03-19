@@ -1,0 +1,68 @@
+Linux:
+
+In the Linux terminal shortcuts:
+aprire il terminal --> ctrl + alt + t
+ctrl + a --> place the cursor at the beginning of the line
+ctrl + e --> place the cursor at the end of the line
+ctrl + l --> clear the screen
+ctrl + u --> delete everything from the cursor to the beginning of the line
+ctrl + k --> delete everything from the cursor to the end of the line
+ctrl + w --> delete the word before the cursor
+ctrl + d --> close the terminal
+!! --> run the last command
+!61 --> the command numbered 61 in the history. Change the number to run another command
+
+copiare nel terminale della vm --> ctrl + shift + c
+incollare nel terminale della vm --> ctrl + shift + v
+creare piu files --> touch bspl{0001..0003}.c (crea touch bspl0001.c bspl0002.c bspl0003.c)
+rimuove una cartella piena e vuota --> rm -rf (elimina la cartella ed il suo contenuto files e sottocartelle) invece rmdir (è più sicuro visto che cancella solo le cartelle vuote)
+Y/n --> in Linux the default choice is the one in uppercase
+
+APT is Linux package manager. It will connect to the repositories find in its configuration files:
+update --> refreshes your package list from repositories
+upgrade --> upgrades installed packages to their latest available versions. Downloading the .deb files and upgrade only the installed packages with the dependencies if needed.
+install --> install the package from the repository
+clean --> once you installed a package normally apt will retain .deb file inside the folder /var/cache/apt/archives. With this command all the .deb files are removed to free up some disk space. In the latest version of apt it does the cleanup process automatically so you may find the archives folder empty.
+remove --> uninstall a package but maintain the configuration files
+purge --> uninstall a package and delete the configuration files. If the package was already uninstalled with remove then the purge will only remove the configuration files
+sudo add-apt-repository ppa:some/ppa --> after adding a repository, your system doesn't automatically know about the new packages available from that repository until you update the local package list. So run the command sudo apt update
+
+sudo useradd username --> create user in Linux
+sudo useradd -m username --> create user and home directory
+sudo usermod -d /home/new_dir joker --> change the default home directory of the user joker
+sudo usermod -s /bin/bash joker --> changes the default shell for the user joker
+sudo usermod -aG sudo joker --> add the user joker to the sudo group. The option -aG means add to a group without removing from other groups
+sudo passwd username --> to change the password of a user
+sudo passwd -l username --> lock an account
+sudo passwd -u username --> unlock an account
+sudo passwd -S username --> check the status of a password
+sudo userdel -r username --> delete user and his home directory
+
+In the file /etc/passwd you'll find the user that can access the machine. You'll find a string like this 'joker:x:5001:5001::/home/joker:/bin/sh' where joker is the username, x is the password stored in another place, 5001 is the user ID, the second 5001 is the group ID, /home/joker is the home directory (after useradd is not created automatically if you don't put the -m option) and /bin/sh the default shell.
+
+The password are stored encrypted in the file /etc/shadow.
+
+The command usermod modify the settings of the users on Linux.
+
+The default shell is the /bin/sh. The shell is the program that interpret and runs the commands we type in the terminal. Another shell is the bash that offers more features and is generally more user-friendly. The difference between sh and bash are not the program they can run because those are installed on the OS but on the features they can offer.
+The bash for example has history (that permit to rerun previous command with the arrow key) and has autocompletition with the tab, while the default sh no. In addition bash has more advanced features for the script, for example it supports the creation of array.
+When running a command the shell simply serves as a command interpreter, sending these commands to the OS to be executed.
+When you run 'ls' the shell interprets ls as the list directory command, it calls the appropriate command (in this case ls) to execute the command. The OS runs the ls program and the output is returned to the shell which displays it in your terminal.
+The shell interpret the command and direct them to the OS which handles the low-level execution.
+
+When a user is part of the sudo group, he can run commands with sudo permission with their password instead of sharing the sudo password. In addition to this you can run the commands users can run as sudo. Also the commands launched with a user with sudo priviliges are tracked. If everyone use the user sudo instead of their with administrative privileges you will not know who run the command.
+
+The root user has permission to modify, delete or change ownership of any file or directory on the system, regardless of the file's ownership or permissions.
+
+Hard Link:
+- A hard link points directly to the inode of a file, meaning it refers to the actual data blocks where the file content is stored on the disk.
+- Since the hard link and the original file share the same inode, they are essentially identical in terms of file content and metadata (permissions, size, etc.).
+- The file's data is not dependent on the name of the file, and if you delete the original file, the data will still exist as long as any hard links to it remain.
+- Hard links cannot span across different file systems because each file system manages its own inodes.
+
+Symbolic Link:
+- A symbolic link (symlink) points to the file path of the original file, not directly to its inode.
+- The symlink contains a reference to the path of the target file (i.e., the name and location of the original file), and this path is followed by the system to access the target.
+- The symlink is independent and has its own inode. It does not store any information about the target file's data blocks or inode.
+- If the target file is moved or deleted, the symbolic link will be broken, as it points to a specific path that may no longer exist.
+- Symbolic links can span across different file systems, as they just store a path and do not depend on the inode structure.
