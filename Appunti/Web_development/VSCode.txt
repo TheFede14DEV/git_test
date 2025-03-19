@@ -1,0 +1,3 @@
+VSCode shortcuts:
+! --> at the start of a file with .html extension to create boilerplate code
+ctrl + / --> to comment or uncomment a line
