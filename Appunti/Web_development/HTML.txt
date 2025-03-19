@@ -1,0 +1,61 @@
+HTML:
+HTML and CSS are two languages that work together to create everything that you see when you look at something on the internet. HTML is the raw data that a webpage is built out of. All the text, links, cards, lists, and buttons are created in HTML. CSS is what adds style to those plain elements. HTML puts information on a webpage, and CSS positions that information, gives it color, changes the font, and makes it look great!
+
+HTML lets us create the structure and the format of a web page.
+Elements in HTML are composed of an opening tag <p> the content of the element </p> and the closing tag.
+There are also void element like <br> called in this way because they are void of any content, there is nothing inside them. No closing tags means they can't wrap content like other tags do.
+Semantic HTML means that every elements has a specific meaning. So we should use the elements to correctly format a page so that a Browser can format it in the correct way. We should not use elements to style parts of the text displayed. This also because HTML semantic makes a web page more accessible giving the possibility to applications like screen reader to correctly read it.
+
+The HTML boilerplate is the code necessary to make everything works.
+
+By default browser will search for the index.html. This is a general rule shared among web developers. If you want you can change the name of the default file and change your Server configuration but don't do it. Stick with the default procedure.
+
+The <!DOCTYPE html> indicate to the browser that is rendering a file that contains HTML 5.
+
+The <html> tag is the root element. Every other element descend from it.
+
+Lang is an attribute that you put inside the html element <html lang="en"> which tells the browser in which language the content is wrote.
+
+The <head> block contains meta-information that describe settings of the document like the charset and things that the browser need to know in order to render properly a page. In this block you don't put any content that is displayed on the page.
+
+You put <meta=charset"UTF-8" because you're telling the browser that the content is encoded in UTF-8 so it can contain symbols like emoji that in other codepages are not supported.
+
+The <title> tag is put in the <head> and contain the string that will be displayed on the tab of the page. It goes in the <head> because again it doesn't store any content.
+
+In the <body> block you put everything that will be displayed in the web page.
+
+The <p> stands for paragraph. HTML gives some default styling like adding a new line after it. In fact in HTML if you put some text without an element, everything will be displayed as a single line.
+
+The headings goes from <h1> to <h6>. In HTML we need to know about the semantic meaning of the things. Because for accessibility purposes, some users will use screen readers to access your page. Using the correct element because you know that an h1 is more important than an h2 is more than a styling choose. So be sure to use elements following their semantic meaning.
+
+<strong> means that the text is important. It change it to bold. Don't use it only for styling and don't use the <b> tag that makes an element bold but doesn't add any semantic meaning.
+
+<em> put emphasis on the text. It change it in italic. Don't use it only for styling and don't use the <I> tag that makes an element italic but doesn't add any semantic meaning.
+
+In HTML we use indentation to make the nesting more clear. But exactly what is nesting? Elements in HTML can have a parent for example <html> is the parent of the <head> and <body>. In the same way you can say that <html> has 2 child.
+
+<head> and <body> are siblings meaning that they live on the same level.
+
+This is an HTML comment <!-- --> when you use it be sure to put a space inside it before and after the comment to avoid that some characters can make the comment behave differently like this <!-- this is a comment -->
+
+
+Unordered lists?
+Ordered lists?
+Anchor element?
+If href is not present in <a> how the text is presented?
+The default value for target attribute which is in <a> and which is the value to open the link in a new tab?
+What does an attributes and which 2 parts made it?
+Difference between absolute path and relative links?
+What will always contain an absolute link?
+
+With target=_blank when you click a link a new page is opened. The page opened, in the new tab, has access to the window.opener object of the source page. So you can modify the source page:
+- redirecting the source page
+- changing the content
+- opening more popus
+This can happen even if the destination page doesn't know the referrer, since the window.opener gives the destination page a direct connection to the source page.
+So when you put rel="noopener" the window.opener reference is completely removed. So the source page can't be manipulated.
+The attribute rel="noreferrer" prevents the referrer (the URL of the source page) from being sent when the link is clicked. It enhance privacy but alone it does not stop the destination page from manipulating the source page through the window.opener. With only noreferrer the URL can be used for tracking, phishing or crafting targeted attacks.
+To fully protect privacy and security code rel="noopener noreferrer".
+When using _self the new page is opened in the same window so there is no new window created. For this reason, window.opener is not passed.
+
+Normally we would only have the index.html at the root directory and all other HTML files in their own directory.
