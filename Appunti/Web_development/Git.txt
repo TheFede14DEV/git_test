@@ -1,0 +1,29 @@
+Git is a version control system.
+In the past, if someone wanted to update a project, they would create a folder on their computer and manually version files, like `file1.0` → `file2.0`. This process was tedious and had a single point of failure.
+Thus, local version control systems were born, allowing versioning with a local database on your computer. The problem? There was still a single point of failure, and it was difficult to collaborate with other colleagues. This method worked well only for solo projects.
+Then, centralized version control systems (CVCS) were created. In these systems, a central server stores the version updates, and anyone can connect to the central server to either retrieve the latest modifications or upload a newer version. However, the problem of the single point of failure still existed. If the server became unreachable, you couldn’t get or upload the files, rendering the system unavailable for everyone.
+This led to the birth of decentralized version control systems (DVCS). Git is a DVCS. What does this mean? It means that everyone downloads a repository from Git and not only gets the files but also all the metadata, such as the project history.
+Git manages these repositories, creates snapshots, and merges the files. Git works with snapshots: when you modify a file, Git takes a snapshot of it. If other files remain unchanged, Git doesn’t store them again—just a reference to the identical file it has already stored. It’s essentially a stream of snapshots.
+Every time you commit, Git takes a picture of what your files look like and stores a reference to that snapshot.
+Git improves collaboration because anyone can work locally and then upload their changes, which Git will merge. If the central server is offline, you can still work because you have a local copy. And if, for some reason, the server doesn’t come back online, any client can upload the repository since all the files are stored locally.
+Before committing any updates, Git performs a checksum to ensure the integrity of the files. No changes can be made without Git being aware of them.
+In addition to this, tracking changes makes it easy to roll back to previous versions and see who made specific changes.
+Git operates in three stages:
+1. First, you get the Git repository on your local disk, where you can start making modifications (modified but not committed to the database).
+2. Then, there is the "staging area" — a file in your Git directory that stores information about what will go into the next commit.
+3. Finally, in the last stage, you commit your changes, which takes the files as they are in the staging area and stores that snapshot permanently in your Git directory.
+While Git is the underlying version control system, GitHub adds features, accessibility, and a user-friendly interface to make working with Git easier, especially in team environments.
+
+Two helpful best practices to consider are atomic commits and leveraging those atomic commits to make your commit messages more useful to future collaborators.
+An atomic commit is a commit that includes changes related to only one feature or task of your program.
+
+GIT commands:
+Commands related to a remote repository:
+git clone git@github.com:USER-NAME/REPOSITORY-NAME.git
+git push or git push origin main (Both accomplish the same goal in this context)
+Commands related to the workflow:
+git add .
+git commit -m "A message describing what you have done to make this snapshot different"
+Commands related to checking status or log history
+git status
+git log
