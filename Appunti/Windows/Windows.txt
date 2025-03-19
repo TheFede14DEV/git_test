@@ -1,0 +1,15 @@
+Windows shortcuts:
+win + d --> minimize all the application and return to desktop. If you press it again it will return to your windows.
+alt + tab --> switch between open applications
+win + l --> lock the computer
+win + e --> open file explorer
+win + i --> open settings
+ctrl + shift + esc --> open task manager
+win + d --> display the desktop and if you redo it, it will reopen the windows
+win + ↑ --> maximize a window
+win + ↓ --> minimize a window
+win + → --> split the window to the right
+win + ← --> split the window to the left
+win + shift + → --> put the windows on the second screen on the right
+win + shift + ← --> put the windows on the second screen on the left
+win + home --> minimize all the window except for the one active
