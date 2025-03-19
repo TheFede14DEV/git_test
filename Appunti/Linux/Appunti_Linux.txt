@@ -15,7 +15,7 @@ ctrl + d --> close the terminal
 copiare nel terminale della vm --> ctrl + shift + c
 incollare nel terminale della vm --> ctrl + shift + v
 creare piu files --> touch bspl{0001..0003}.c (crea touch bspl0001.c bspl0002.c bspl0003.c)
-rimuove una cartella piena e vuota --> rm -rf (elimina la cartella ed il suo contenuto files e sottocartelle) invece rmdir (è più sicuro visto che cancella solo le cartelle vuote)
+rimuove una cartella piena e vuota --> rm -rf (elimina la cartella ed il suo contenuto files e sottocartelle) invece rmdir (Ã¨ piÃ¹ sicuro visto che cancella solo le cartelle vuote)
 Y/n --> in Linux the default choice is the one in uppercase
 
 APT is Linux package manager. It will connect to the repositories find in its configuration files:
