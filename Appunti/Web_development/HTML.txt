@@ -38,15 +38,34 @@ In HTML we use indentation to make the nesting more clear. But exactly what is n
 
 This is an HTML comment <!-- --> when you use it be sure to put a space inside it before and after the comment to avoid that some characters can make the comment behave differently like this <!-- this is a comment -->
 
+An unordered list create a bullet point list.
+You can done it with the the tag <ul> and then inside every item is put inside an <li> tag.
+Since lists take full space because they are a block don't put them inside other blocks like <p> elements.
+In addition ul and ol can only contain li items so don't put any content in them.
+<li> items can contains other block elements like paragraphs or headings.
+You should do:
+<p>Sports that I love</p>
+<ul>
+  <li>Football</li>
+  <li>
+    <p>Other sports</p>
+  </li>
+</ul>
 
-Unordered lists?
-Ordered lists?
-Anchor element?
-If href is not present in <a> how the text is presented?
-The default value for target attribute which is in <a> and which is the value to open the link in a new tab?
-What does an attributes and which 2 parts made it?
-Difference between absolute path and relative links?
-What will always contain an absolute link?
+Is the same as create an <ul> but instead you use <ol> with <li> items. The list is numbered.
+
+The <a> tag is called anchor. Why? Because it anchor a link to a web page or other things like images to the content. So the content will be displayed underlined and clickable on the browser. You need to put the href attribute or the content will be displayed as normal text.
+In the href you can put absolute link or relative links.
+
+By default if not specified the <a> tag has the attribute target=_self which open the link in the same page. If you want that it opens a new tab specify _blank.
+
+An attribute gives additional information about an HTML element and it goes in the opening tag. It is a key-value pair (a name and a value).
+
+Absolute links point to pages on the internet.
+Like https://www.theodinproject.com/about
+A relative path is a link to a page on our website. They do not include the domain name, it only contains the file path to the other page, relative to the page you are creating the link on.
+
+An absolute link will always contain at least a scheme and a domain (scheme://domain).
 
 With target=_blank when you click a link a new page is opened. The page opened, in the new tab, has access to the window.opener object of the source page. So you can modify the source page:
 - redirecting the source page
