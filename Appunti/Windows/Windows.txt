@@ -1,5 +1,6 @@
 Windows shortcuts:
-win + d --> minimize all the application and return to desktop. If you press it again it will return to your windows.
+ctrl + shift + v --> paste as plain text
+win + d --> minimize all the application and return to desktop. If you press it again it will return to your windows
 alt + tab --> switch between open applications
 win + l --> lock the computer
 win + e --> open file explorer
